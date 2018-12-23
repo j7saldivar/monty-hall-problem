@@ -3,6 +3,7 @@ package com.jorgesaldivar.interactive.service.impl;
 import com.jorgesaldivar.interactive.service.PlayerService;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 
 import java.util.Scanner;
 
@@ -25,12 +26,13 @@ public class PlayerServiceImpl implements PlayerService {
         System.out.println();
         System.out.print("Pick door (1, 2, or 3) : ");
 
-        int pick = -1;
-        while (!scanner.hasNextInt() || ((pick = scanner.nextInt()) > 3 || pick < 1)) {
+        String read = scanner.next();
+        while (invalidNumber(read)) {
             System.out.print("\tInvalid door, please pick door (1, 2, or 3) : ");
+            read = scanner.next();
         }
 
-        return pick > -1 ? pick : scanner.nextInt();
+        return Integer.valueOf(read);
     }
 
     @Override
@@ -49,9 +51,19 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public boolean continuePlaying() {
         System.out.print("\n\tWould you like to continue playing? ");
-        String input = scanner.next();
 
-        return invalidInput(input) || BooleanUtils.toBoolean(input);
+        String read = scanner.next();
+        while (invalidInput(read)) {
+            System.out.print("\n\tInvalid option, would you like to continue playing? ");
+            read = scanner.next();
+        }
+
+        return BooleanUtils.toBoolean(read);
+
+    }
+
+    private boolean invalidNumber(String input) {
+        return !NumberUtils.isDigits(input) || (Integer.valueOf(input) < 1 || Integer.valueOf(input) > 3);
     }
 
     private boolean invalidInput(String input) {
