@@ -10,18 +10,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>human-vs-computer</artifactId>
+    <artifactId>computer-simulation</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.jorgesaldivar</groupId>
-            <artifactId>computer-vs-computer</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

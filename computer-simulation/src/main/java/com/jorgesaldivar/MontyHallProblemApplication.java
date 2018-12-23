@@ -1,5 +1,6 @@
 package com.jorgesaldivar;
 
+import com.jorgesaldivar.config.SimulationConfig;
 import com.jorgesaldivar.runner.Game;
 
 /**
@@ -10,7 +11,9 @@ import com.jorgesaldivar.runner.Game;
 public class MontyHallProblemApplication {
 
     public static void main(String[] args) {
-        new Game().run();
+        new Game
+                (SimulationConfig.getInstance().gameService())
+                .start();
     }
 
 }
