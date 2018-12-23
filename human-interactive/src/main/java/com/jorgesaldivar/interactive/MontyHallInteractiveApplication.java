@@ -1,6 +1,6 @@
 package com.jorgesaldivar.interactive;
 
-import com.jorgesaldivar.interactive.config.InteractiveApplicationConfig;
+import com.jorgesaldivar.interactive.config.InteractiveConfig;
 import com.jorgesaldivar.interactive.runner.InteractiveGame;
 
 /**
@@ -12,7 +12,7 @@ public class MontyHallInteractiveApplication {
 
     public static void main(String[] args) {
         new InteractiveGame
-                (InteractiveApplicationConfig.getInstance().playerService())
+                (InteractiveConfig.getInstance().playerService())
                 .start();
     }
 }

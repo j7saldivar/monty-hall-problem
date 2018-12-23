@@ -10,15 +10,15 @@ import java.util.Scanner;
  *
  * @author Jorge Saldivar
  */
-public class InteractiveApplicationConfig {
+public class InteractiveConfig {
 
-    private static final InteractiveApplicationConfig INSTANCE = new InteractiveApplicationConfig();
+    private static final InteractiveConfig INSTANCE = new InteractiveConfig();
     private PlayerService playerService;
 
-    private InteractiveApplicationConfig() {
+    private InteractiveConfig() {
     }
 
-    public static InteractiveApplicationConfig getInstance() {
+    public static InteractiveConfig getInstance() {
         return INSTANCE;
     }
 

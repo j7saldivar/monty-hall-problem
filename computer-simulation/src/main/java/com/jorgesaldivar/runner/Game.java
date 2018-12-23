@@ -19,9 +19,13 @@ import java.util.stream.IntStream;
 public class Game {
 
     private static final int TIMES_PLAYED = 1_000_000;
-    private final GameService gameService = new GameServiceImpl();
+    private final GameService gameService;
 
-    public void run() {
+    public Game(GameService gameService) {
+        this.gameService = gameService;
+    }
+
+    public void start() {
 
         final List<Door> stickWithDecision = new ArrayList<>();
         final List<Door> changeDecision = new ArrayList<>();
