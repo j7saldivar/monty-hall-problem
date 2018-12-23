@@ -18,8 +18,8 @@
     </properties>
 
     <modules>
-        <module>computer-vs-computer</module>
-        <module>human-vs-computer</module>
+        <module>computer-simulation</module>
+        <module>human-interactive</module>
     </modules>
 
     <dependencyManagement>
